@@ -1,0 +1,8 @@
+.example-card {
+  max-width: 20rem;
+  height: 20rem;
+}
+
+.example-header-image {
+  background-size: cover;
+}
