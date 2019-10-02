@@ -7,13 +7,14 @@ mat-grid-tile {
 
 .grid-container{
     margin: 5rem;
-    
+
 }
 .cardList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  display: inline;
 }
 /* Column Gap */
 .cardList > * {

@@ -1,17 +1,20 @@
 <div class="grid-container">
-    <div class="cardList">
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-        <app-planet-card></app-planet-card>
-    </div>
-    <!-- <app-planet-card></app-planet-card> -->
+  <mat-grid-list cols="5" rowHeight="2:1">
+    <mat-grid-tile><app-planet-card></app-planet-card> </mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list>
+<!--    <div class="cardList"*ngFor="let planet of planets">-->
+<!--        <app-planet-card [planetName]="planet.name"-->
+<!--        [population]="planet.population"-->
+<!--        [terrain]="planet.terrain"-->
+<!--        [climate]="planet.climate"></app-planet-card>-->
+<!--    </div>-->
 </div>
 <p>Default pagination:</p>
-<ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="totalPlanets"
+  (pageChange)="loadPage(page)"></ngb-pagination>

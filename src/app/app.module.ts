@@ -6,36 +6,36 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PlanetsComponent } from './components/planets/planets.component';
-import { RouterModule, Routes } from '@angular/router';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { PlanetCardComponent } from './components/planet-card/planet-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-// Routing 
-const appRoutes: Routes = [
-  { path: 'planets', component: PlanetsComponent }
-];
-
+import { FilmsComponent } from './components/films/films.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import {MatGridListModule, MatIconModule} from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import {SWapiService} from './Services/swapi.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     PlanetsComponent,
-    PlanetCardComponent
+    PlanetCardComponent,
+    FilmsComponent,
+    FavoritesComponent
   ],
   imports: [
+    MatGridListModule,
+    HttpClientModule,
+    MatIconModule,
     MatCardModule,
-    FlexLayoutModule ,
+    FlexLayoutModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(
-      appRoutes
-    )
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ SWapiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
